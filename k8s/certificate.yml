@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: k8s-radiantblink-com-tls
+spec:
+  secretName: k8s-radiantblink-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: k8s.radiantblink.com
+  dnsNames:
+    - k8s.radiantblink.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - k8s.radiantblink.com
