@@ -22,3 +22,5 @@ kubectl apply -f k8s
 # kubectl set image <object type>/<object name> <container name>/<image>
 # imperatively update our images
 kubectl set image deployments/server-deployment server=luisalen/multi-server:$SHA
+kubectl set image deployments/server-deployment server=luisalen/multi-client:$SHA
+kubectl set image deployments/server-deployment server=luisalen/multi-worker:$SHA
